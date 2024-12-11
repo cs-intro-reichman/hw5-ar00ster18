@@ -44,6 +44,7 @@ public class Scrabble {
 			DICTIONARY[NUM_OF_WORDS++] = in.readString().toLowerCase();
 		}
         System.out.println(NUM_OF_WORDS + " words loaded.");
+		// System.out.println(DICTIONARY[0]);
 	}
 
 	// Checks if the given word is in the dictionary.
@@ -69,7 +70,7 @@ public class Scrabble {
 		if (word.length() == 10){
 			score += 50;
 		}
-		if (MyString.subsetOf(word, "runi")){
+		if (MyString.subsetOf("runi", word)){
 			score += 1000;
 		}
 
@@ -154,7 +155,7 @@ public class Scrabble {
 		// testScrabbleScore();    
 		// testCreateHands();  
 		// testPlayHands();
-		playGame();
+		// playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
