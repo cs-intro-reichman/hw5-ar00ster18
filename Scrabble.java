@@ -49,7 +49,7 @@ public class Scrabble {
 
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
-		for (int i = 0; i < MAX_NUMBER_OF_WORDS; i++){
+		for (int i = 0; i < NUM_OF_WORDS; i++){
 			if(DICTIONARY[i].equals(word)){
 				return true;
 			}
@@ -67,7 +67,7 @@ public class Scrabble {
 			score += SCRABBLE_LETTER_VALUES[index];
 		}
 		score *= word.length();
-		if (word.length() == 10){
+		if (word.length() == HAND_SIZE){
 			score += 50;
 		}
 		if (MyString.subsetOf("runi", word)){

@@ -53,8 +53,11 @@ public class MyString {
          if (str1.length() > str2.length()){
             return false;
          }
+         if (str1.length() == 0){
+            return true;
+         }
          for (int i = 0; i < str1.length(); i++){
-            if (countChar(str1, str1.charAt(i)) != countChar(str2, str1.charAt(i))){
+            if (countChar(str2, str1.charAt(i)) == 0){
                 return false;
             }
          }
