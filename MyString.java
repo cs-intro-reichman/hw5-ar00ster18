@@ -60,6 +60,9 @@ public class MyString {
             if (countChar(str2, str1.charAt(i)) == 0){
                 return false;
             }
+            if(countChar(str2, str1.charAt(i)) < countChar(str1, str1.charAt(i))){
+                return false;
+            }
          }
         return true;
     }

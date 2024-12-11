@@ -97,7 +97,7 @@ public class Scrabble {
 		// Declares the variable in to refer to an object of type In, and initializes it to represent
 		// the stream of characters coming from the keyboard. Used for reading the user's inputs.   
 		In in = new In();
-		while (n  > 0) {
+		while (hand.length()  > 0) {
 			System.out.println("Current Hand: " + MyString.spacedString(hand));
 			System.out.println("Enter a word, or '.' to finish playing this hand:");
 			// Reads the next "token" from the keyboard. A token is defined as a string of 
@@ -108,11 +108,15 @@ public class Scrabble {
 			//// that completes the hand playing loop
 			if (input.equals(".")){	
 				break;
-			} else if (isWordInDictionary(input)){
+			} else if (!isWordInDictionary(input)){
+				System.out.println("No such word in the dictionary. Try again.");
+				continue;
+			} else if (!MyString.subsetOf(input, hand)){
+				System.out.println("Invalid word. Try again");
+				continue;
+			} else {
 				hand = MyString.remove(hand, input);
 				score += wordScore(input);
-			} else {
-				System.out.println("No such word in the dictionary. Try again.");
 			}
 			
 		}
